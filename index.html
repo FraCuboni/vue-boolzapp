@@ -149,14 +149,14 @@
                     <!-- chat content -->
                      <div  class="chat-content">
 
-                        <div v-if="contacts[0].messages[0].status !== 'sent' "  v-for= "(msg, index) in contacts[0].messages" class="other-msg">
+                        <div v-if="contacts[0].messages[0].status !== 'sent' " :key="index"  v-for= "(msg, index) in contacts[0].messages" class="other-msg">
                             <div>
                                 <p>ciaooo</p>
                                 <span>time</span>
                             </div>
                         </div>
 
-                        <div v-if="contacts[0].messages[0].status == 'sent' " v-for="(msg, index) in contacts[0].messages"  class="user-msg">
+                        <div v-if="contacts[0].messages[0].status == 'sent' " :key="index" v-for="(msg, index) in contacts[0].messages"  class="user-msg">
                             <div>
                                 <p>Giorgio</p>
                                 <span>time</span>
