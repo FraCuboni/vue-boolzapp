@@ -170,6 +170,8 @@ createApp({
             ],
 
             selectedChat : '0',
+
+            keyboardInputMSG : '',
             
 
 
@@ -180,6 +182,21 @@ createApp({
         openChat(index){
             this.selectedChat = index;
             console.log('la chat selezionata è la n:'+this.selectedChat)
+        },
+
+        sendMessage(){
+            // creo l'oggetto newMessage da pushare nell'array
+            if(this.keyboardInputMSG.length > 0){
+                let newMessage = {
+                    date: 'x',
+                    message: this.keyboardInputMSG,
+                    status: 'sent'
+                };
+                // pusho l'oggetto
+                this.contacts[this.selectedChat].messages.push(newMessage);
+                this.keyboardInputMSG = '';
+
+            }
         }
 
     },

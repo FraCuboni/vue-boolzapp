@@ -113,7 +113,7 @@
 
                             </div>
 
-                            <div class="info-msg msg-time">time</div>
+                            <div class="info-msg msg-time">{{contact.messages[contact.messages.length - 1].date}}</div>
 
                         </div>
 
@@ -134,7 +134,7 @@
                             <div class="pfp"> 
                                 <img src="img/pfp.jpg" alt="">
                             </div>
-                            <p>NOME UTENTE A CUI SCRIVI</p>
+                            <p>{{contacts[selectedChat].name}}</p>
                         </div>
 
                         <!-- right -->
@@ -155,31 +155,6 @@
                                 <span>{{msg.date}}</span>
                             </div>
                         </div>
-                        <pre>
-                            contacts: [
-                            {
-                                name: 'Michele',
-                                avatar: './img/avatar_1.png',
-                                visible: true,
-                                messages: [
-                                    {
-                                        date: '10/01/2020 15:30:55',
-                                        message: 'Hai portato a spasso il cane?',
-                                        status: 'sent'
-                                    },
-                                    {
-                                        date: '10/01/2020 15:50:00',
-                                        message: 'Ricordati di stendere i panni',
-                                        status: 'sent'
-                                    },
-                                    {
-                                        date: '10/01/2020 16:15:22',
-                                        message: 'Tutto fatto!',
-                                        status: 'received'
-                                    }
-                                ],
-                            },
-                        </pre>
 
 
                      </div>
@@ -190,7 +165,7 @@
                         <div class="icon"><i class="fa-regular fa-face-smile"></i></div>
 
                         <div class="chat-searchbar-container"> 
-                            <input class="searchbar" type="text">
+                            <input v-model="keyboardInputMSG" @keyup.enter="sendMessage" class="searchbar" type="text">
                         </div>
 
                         <div><i class="fa-solid fa-microphone"></i></div>

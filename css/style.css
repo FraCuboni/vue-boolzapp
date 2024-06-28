@@ -120,7 +120,7 @@ button.search{
 }
 
 .user-tab-active{
-    background-color: red;
+    
 }
 
 .pfp{
@@ -178,6 +178,7 @@ button.search{
 .other-msg{
     display: flex;
     margin-bottom: 15px;
+    word-wrap: break-word;
 }
 
 .user-msg{
