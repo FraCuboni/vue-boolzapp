@@ -167,7 +167,9 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+
+            selectedChat : '0',
             
 
 
@@ -175,8 +177,9 @@ createApp({
     },
     methods: {
         // functions
-        openChat(){
-            
+        openChat(index){
+            this.selectedChat = index;
+            console.log('la chat selezionata è la n:'+this.selectedChat)
         }
 
     },

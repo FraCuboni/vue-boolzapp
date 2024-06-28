@@ -119,6 +119,10 @@ button.search{
     background-color: #F5F5F5;
 }
 
+.user-tab-active{
+    background-color: red;
+}
+
 .pfp{
     height: 100%;
     aspect-ratio: 1/1;

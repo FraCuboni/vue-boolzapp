@@ -95,7 +95,7 @@
                      <div class="accounts-container">
 
                         <!-- user tab -->
-                        <div v-for="(contact, index) in contacts" class="user-tab">
+                        <div v-for="(contact, index) in contacts" class="user-tab" @click="openChat(index)">
 
                             <!-- profile pic -->
                             <div class="pfp"> 
@@ -147,22 +147,14 @@
                     </div>
 
                     <!-- chat content -->
-                     <div  class="chat-content">
+                     <div class="chat-content">
 
-                        <div v-if="contacts[0].messages[0].status !== 'sent' " :key="index"  v-for= "(msg, index) in contacts[0].messages" class="other-msg">
+                        <div :class="msg.status === 'sent' ? 'user-msg' : 'other-msg' " v-for="(msg, index) in contacts[selectedChat].messages" >
                             <div>
-                                <p>ciaooo</p>
-                                <span>time</span>
+                                <p>{{msg.message}}</p>
+                                <span>{{msg.date}}</span>
                             </div>
                         </div>
-
-                        <div v-if="contacts[0].messages[0].status == 'sent' " :key="index" v-for="(msg, index) in contacts[0].messages"  class="user-msg">
-                            <div>
-                                <p>Giorgio</p>
-                                <span>time</span>
-                            </div>
-                        </div>
-
                         <pre>
                             contacts: [
                             {
