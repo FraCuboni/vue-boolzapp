@@ -95,7 +95,7 @@
                      <div class="accounts-container">
 
                         <!-- user tab -->
-                        <div class="user-tab">
+                        <div v-for="(contact, index) in contacts" class="user-tab">
 
                             <!-- profile pic -->
                             <div class="pfp"> 
@@ -106,14 +106,14 @@
                             <div>
 
                                 <!-- username -->
-                                <div class="username">Mario L.</div>
+                                <div class="username">{{contact.name}}</div>
                                 
                                 <!-- last message send -->
-                                <div class="info-msg">Ultimo messaggio inviato</div>
+                                <div class="info-msg">{{contact.messages[contact.messages.length - 1].message}}</div>
 
                             </div>
 
-                            <div class="info-msg msg-time">12:30</div>
+                            <div class="info-msg msg-time">time</div>
 
                         </div>
 
@@ -147,21 +147,47 @@
                     </div>
 
                     <!-- chat content -->
-                     <div class="chat-content">
+                     <div v-for="(msg, index) in contact.messages" class="chat-content">
 
                         <div class="other-msg">
                             <div>
                                 <p>ciaooo</p>
-                                <span>12:30</span>
+                                <span>time</span>
                             </div>
                         </div>
 
                         <div class="user-msg">
                             <div>
                                 <p>Giorgio</p>
-                                <span>12:30</span>
+                                <span>time</span>
                             </div>
                         </div>
+
+                        <pre>
+                            contacts: [
+                            {
+                                name: 'Michele',
+                                avatar: './img/avatar_1.png',
+                                visible: true,
+                                messages: [
+                                    {
+                                        date: '10/01/2020 15:30:55',
+                                        message: 'Hai portato a spasso il cane?',
+                                        status: 'sent'
+                                    },
+                                    {
+                                        date: '10/01/2020 15:50:00',
+                                        message: 'Ricordati di stendere i panni',
+                                        status: 'sent'
+                                    },
+                                    {
+                                        date: '10/01/2020 16:15:22',
+                                        message: 'Tutto fatto!',
+                                        status: 'received'
+                                    }
+                                ],
+                            },
+                        </pre>
 
 
                      </div>
