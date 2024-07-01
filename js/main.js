@@ -171,6 +171,12 @@ createApp({
 
             selectedChat : '0',
 
+            okResponse : {
+                date: 'x',
+                message: 'ok!',
+                status: 'received'
+            },
+
             keyboardInputMSG : '',
             
 
@@ -196,7 +202,15 @@ createApp({
                 this.contacts[this.selectedChat].messages.push(newMessage);
                 this.keyboardInputMSG = '';
 
+                // imposto la risposta dell'utente 
+                setTimeout(() => {
+                    this.contacts[this.selectedChat].messages.push(this.okResponse);
+                }, 2000);
+
             }
+        },
+
+        contactResponse(){
         }
 
     },
