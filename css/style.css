@@ -235,3 +235,7 @@ button.search{
 .hover-help:hover>.popup-msg{
     display: block;
 }
+
+.d-none{
+    display: none;
+}

@@ -181,7 +181,6 @@ createApp({
 
             searchContactInput : '',
 
-            shownContacts : [],
             
 
 
@@ -237,8 +236,8 @@ createApp({
         // computed
         
         // funzione per la ricerca contatti 
-        searchContact(){
-            return this.contacts.filter(contact =>{
+        filteredContacts() {
+            return this.contacts.filter(contact => {
                 return contact.name.toLowerCase().includes(this.searchContactInput.toLowerCase());
             });
         }
@@ -246,7 +245,7 @@ createApp({
     },
     mounted(){
         // mounted
-        this.logthis(2000, this.searchContact);
+        this.logthis(2000, this.filteredContacts);
         
     }
 }).mount('#app');
