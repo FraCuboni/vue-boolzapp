@@ -88,11 +88,11 @@
                     <!-- chat selector searchbar -->
                     <div class="selector-searchbar-container">
                         <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input class="searchbar" type="text">
+                        <input class="searchbar" type="text" v-model="searchContactInput">
                     </div>
 
                     <!-- accounts container -->
-                     <div class="accounts-container">
+                    <div class="accounts-container">
 
                         <!-- user tab -->
                         <div v-for="(contact, index) in contacts" class="user-tab" @click="openChat(index)">
@@ -108,7 +108,7 @@
                                 <!-- username -->
                                 <div class="username">{{contact.name}}</div>
                                 
-                                <!-- last message send -->
+                                <!-- last message sent -->
                                 <div class="info-msg">{{contact.messages[contact.messages.length - 1].message}}</div>
 
                             </div>
@@ -117,7 +117,7 @@
 
                         </div>
 
-                     </div>
+                    </div>
 
                 </div>
 
@@ -150,9 +150,14 @@
                      <div class="chat-content">
 
                         <div :class="msg.status === 'sent' ? 'user-msg' : 'other-msg' " v-for="(msg, index) in contacts[selectedChat].messages" >
-                            <div>
+                            <div class="hover-help">
                                 <p>{{msg.message}}</p>
                                 <span>{{msg.date}}</span>
+                                <div class="popup-msg">
+                                    <ul>
+                                        <li>Elimina messaggio</li> 
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 

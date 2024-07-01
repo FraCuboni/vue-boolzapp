@@ -55,6 +55,10 @@ img{
     max-height: 100%;
 }
 
+li{
+    
+  list-style-type: none;
+}
 
 
 
@@ -189,6 +193,8 @@ button.search{
     justify-content: start;
 }
 
+
+
 .user-msg>div,
 .other-msg>div{
     width: 35%;
@@ -213,3 +219,19 @@ button.search{
     right: 7px;
 }
 
+.popup-msg{
+    display: none;
+    position: absolute;
+    padding: 10px;
+    right: 0;
+    top: 0;
+    background-color: lightgrey;
+    z-index: 3;
+}
+
+.user-msg>div>.popup-msg{
+}
+
+.hover-help:hover>.popup-msg{
+    display: block;
+}

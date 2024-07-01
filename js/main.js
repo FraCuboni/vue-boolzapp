@@ -178,6 +178,10 @@ createApp({
             },
 
             keyboardInputMSG : '',
+
+            searchContactInput : '',
+
+            shownContacts : [],
             
 
 
@@ -185,11 +189,14 @@ createApp({
     },
     methods: {
         // functions
+
+        // funzione per aprire la chat cliccando sul contatto
         openChat(index){
             this.selectedChat = index;
             console.log('la chat selezionata è la n:'+this.selectedChat)
         },
 
+        // funzione per inviare un messaggio e per la risposta automatica del contatto
         sendMessage(){
             // creo l'oggetto newMessage da pushare nell'array
             if(this.keyboardInputMSG.length > 0){
@@ -210,12 +217,36 @@ createApp({
             }
         },
 
-        contactResponse(){
-        }
+        // elimino il messaggio
+        deleteMessage(){
+            
+        },
 
+        // log perpetui 
+        logthis(time, thingtolog){
+            setInterval(() => {
+                console.log(thingtolog)
+            }, time);
+
+        },
+
+
+
+    },
+    computed:{
+        // computed
+        
+        // funzione per la ricerca contatti 
+        searchContact(){
+            return this.contacts.filter(contact =>{
+                return contact.name.toLowerCase().includes(this.searchContactInput.toLowerCase());
+            });
+        }
+        
     },
     mounted(){
         // mounted
+        this.logthis(2000, this.searchContact);
         
     }
 }).mount('#app');
