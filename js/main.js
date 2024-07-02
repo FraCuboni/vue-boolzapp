@@ -245,7 +245,7 @@ createApp({
     },
     mounted(){
         // mounted
-        this.logthis(2000, this.filteredContacts);
+        this.logthis(20000, this.filteredContacts);
         
     }
 }).mount('#app');
