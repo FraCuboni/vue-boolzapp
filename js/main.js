@@ -198,7 +198,7 @@ createApp({
         // funzione per inviare un messaggio e per la risposta automatica del contatto
         sendMessage(){
             // creo l'oggetto newMessage da pushare nell'array
-            if(this.keyboardInputMSG.length > 0){
+            if(this.keyboardInputMSG.length > 0 && this.trimString(this.keyboardInputMSG) === true){
                 let newMessage = {
                     date: 'x',
                     message: this.keyboardInputMSG,
@@ -216,9 +216,17 @@ createApp({
             }
         },
 
+
+        // BONUS FUNCTIONS
+
         // elimino il messaggio
         deleteMessage(){
             
+        },
+
+        // check stringa vuota
+        trimString(str){
+            return str.trim().length > 0;
         },
 
         // log perpetui 
