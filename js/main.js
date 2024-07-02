@@ -181,7 +181,7 @@ createApp({
 
             searchContactInput : '',
 
-            contactResponses : [
+            contactreplies : [
                 'Basta non ci voglio uscire con te',
                 'Smetti di scrivermi ti ho detto',
                 'Vedi che ti blocco',
@@ -221,7 +221,7 @@ createApp({
 
                 // imposto la risposta dell'utente 
                 setTimeout(() => {
-                    this.okResponse.message = this.contactResponses[this.randomResponses(8)];
+                    this.okResponse.message = this.contactreplies[this.randomreplies(8)];
                     this.contacts[this.selectedChat].messages.push({...this.okResponse});
                 }, 2000);
 
@@ -236,8 +236,8 @@ createApp({
             
         },
 
-        // random responses
-        randomResponses(max){
+        // random replies
+        randomreplies(max){
             return Math.floor(Math.random() * max);
         },
 

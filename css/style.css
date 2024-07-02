@@ -67,6 +67,7 @@ li{
     height: 100%;
     width: 30%;
     background-color: #FFFFFF;
+    position: relative;
 }
 
 .selector-notifications{
@@ -150,6 +151,47 @@ button.search{
     position: absolute;
     right: 10px;
 }
+
+.new-chat-popup{
+    position: absolute;
+    transform: translate(0, -50%);
+    top: 23%;
+    right: 0;
+    background-color: red;
+    width: 50%;
+    z-index: 3;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5%;
+    flex-grow: 0;
+}
+
+.new-chat-popup>*{
+    background-color: white;
+}
+.close-popup{
+    font-size: 1.5rem;
+}
+
+.new-chat{
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* CHAT SIDE */
 .chat-container{
