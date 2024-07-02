@@ -173,13 +173,24 @@ createApp({
 
             okResponse : {
                 date: 'x',
-                message: 'ok!',
+                message: '',
                 status: 'received'
             },
 
             keyboardInputMSG : '',
 
             searchContactInput : '',
+
+            contactResponses : [
+                'Basta non ci voglio uscire con te',
+                'Smetti di scrivermi ti ho detto',
+                'Vedi che ti blocco',
+                'Ora basta, chiamo la polizia',
+                'Attento a cosa dici',
+                'Posso diventare pericoloso se continui ad assillarmi',
+                'Ho amicizie in Cosa Nostra',
+                'Pensi che mi diverta a dirti di smettere di scrivermi?',
+            ],
 
             
 
@@ -210,7 +221,8 @@ createApp({
 
                 // imposto la risposta dell'utente 
                 setTimeout(() => {
-                    this.contacts[this.selectedChat].messages.push(this.okResponse);
+                    this.okResponse.message = this.contactResponses[this.randomResponses(8)];
+                    this.contacts[this.selectedChat].messages.push({...this.okResponse});
                 }, 2000);
 
             }
@@ -222,6 +234,11 @@ createApp({
         // elimino il messaggio
         deleteMessage(){
             
+        },
+
+        // random responses
+        randomResponses(max){
+            return Math.floor(Math.random() * max);
         },
 
         // check stringa vuota
